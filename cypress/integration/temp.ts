@@ -21,7 +21,7 @@ describe('the temperature converter', () => {
       cy.get('[data-temp-converter-value-input]').type('100');
       cy.get('[data-temp-converter-convert-to-f-button]').click();
 
-      cy.get('[data-temp-converter-answer-span]').should('contain', '212');
+      cy.get('[data-temp-converter-answer-span]').should('contain', '214');
     });
   });
 });
