@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { By } from "@angular/platform-browser";
 import { ConvertersService } from "src/app/services/converters.service";
 import { TempConverterComponent } from "./temp-converter.component";
 
@@ -33,7 +34,16 @@ describe('TempConverterComponent', () => {
           providers: [ConvertersService]
         });
 
+        fixture = TestBed.createComponent(TempConverterComponent);
 
+        inputElement = fixture.debugElement.query(By.css('[data-temp-converter-value-input]')).nativeElement;
+        convertToFButton = fixture.debugElement.query(By.css('[data-temp-converter-convert-to-f-button]')).nativeElement;
+        answerSpan = fixture.debugElement.query(By.css('[data-temp-converter-answer-span]')).nativeElement;
+      });
+      it('are all the elements hooked up', () => {
+        expect(inputElement).not.toBeNull();
+        expect(convertToFButton).not.toBeNull();
+        expect(answerSpan).not.toBeNull();
       });
 
       // when the user enters 200 in the text box

@@ -6,7 +6,4 @@ export class ConvertersService {
   convertToF(tempInC: number): number {
     return (tempInC * 9 / 5) + 32;
   }
-
-
-
 }
