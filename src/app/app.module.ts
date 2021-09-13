@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TempConverterComponent } from './components/temp-converter/temp-converter.component';
+import { ConvertersService } from './services/converters.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { TempConverterComponent } from './components/temp-converter/temp-convert
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ConvertersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
