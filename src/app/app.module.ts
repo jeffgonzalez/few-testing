@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TempConverterComponent } from './components/temp-converter/temp-converter.component';
 import { ConvertersService } from './services/converters.service';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TempConverterComponent
+    TempConverterComponent,
+    NavigationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
