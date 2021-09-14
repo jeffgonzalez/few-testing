@@ -15,6 +15,10 @@ import { ShoppingListItemComponent } from './components/shopping-list-item/shopp
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './effects/app.effects';
+import { StoresDataService } from './services/stores-data.service';
+import { ShoppingListDataService } from './services/shopping-list-data.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +36,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([AppEffects])
   ],
-  providers: [ConvertersService],
+  providers: [ConvertersService,
+    StoresDataService,
+    ShoppingListDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

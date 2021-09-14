@@ -5,7 +5,7 @@ export interface ShoppingEntity {
   id: string;
   description: string;
   purchased: boolean;
-  store?: string
+  store?: string;
 }
 
 export interface ShoppingState extends EntityState<ShoppingEntity> {
