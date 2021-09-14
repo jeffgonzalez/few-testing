@@ -8,11 +8,11 @@ describe('ShoppingListItemComponent', () => {
 
 
   describe('Unpurchased Item With No Store', () => {
-    let testHostFixture: ComponentFixture<TestHostComponent>;
+    let testHostFixture: ComponentFixture<UnPurchasedTestHostComponent>;
     @Component({
       template: `<app-shopping-list-item [item]="item"></app-shopping-list-item>`
     })
-    class TestHostComponent {
+    class UnPurchasedTestHostComponent {
       item: ShoppingListItemModel = {
         id: '1',
         description: 'Tacos',
@@ -22,9 +22,9 @@ describe('ShoppingListItemComponent', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        declarations: [TestHostComponent, ShoppingListItemComponent]
+        declarations: [UnPurchasedTestHostComponent, ShoppingListItemComponent]
       });
-      testHostFixture = TestBed.createComponent(TestHostComponent);
+      testHostFixture = TestBed.createComponent(UnPurchasedTestHostComponent);
 
     });
 
@@ -33,9 +33,10 @@ describe('ShoppingListItemComponent', () => {
       expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-description]').innerText).toBe('Tacos');
     });
 
-    it('does not show the purchase button', () => {
+    it('does show the purchase button', () => {
       testHostFixture.detectChanges();
-      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-purchased]')).toBeNull();
+      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-purchased]')).not.toBeNull();
+      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-purchased] [data-shopping-list-item-purchase-button]')).not.toBeNull();
     });
 
 
@@ -68,10 +69,10 @@ describe('ShoppingListItemComponent', () => {
       expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-description]').innerText).toBe('Tacos');
     });
 
-    it('shows the purchase button', () => {
+    it('does not show the purchase button', () => {
       testHostFixture.detectChanges();
-      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-purchased]')).not.toBeNull();
-      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-purchased] [data-shopping-list-item-purchase-button]')).not.toBeNull();
+      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-purchased]')).toBeNull();
+      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-purchased] [data-shopping-list-item-purchase-button]')).toBeNull();
 
     });
 

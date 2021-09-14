@@ -12,4 +12,8 @@ export class ShoppingListItemComponent {
   constructor() { }
 
 
+  markPurchased(item: ShoppingListItemModel) {
+    this.item.purchased = true;
+    console.log(this.item);
+  }
 }

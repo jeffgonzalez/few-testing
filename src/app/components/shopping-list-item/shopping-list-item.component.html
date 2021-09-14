@@ -7,9 +7,10 @@
   </div>
   <div class="card-footer"
        data-shopping-list-item-purchased
-       *ngIf="item.purchased">
+       *ngIf="!item.purchased">
     <div>
-      <button class="btn btn-danger"
+      <button (click)="markPurchased(item)"
+              class="btn btn-danger"
               data-shopping-list-item-purchase-button>Purchase</button>
     </div>
   </div>
