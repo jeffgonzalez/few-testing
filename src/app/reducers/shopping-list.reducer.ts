@@ -19,7 +19,13 @@ const initialState = adapter.getInitialState();
 
 const reducerFunction = createReducer(
   initialState,
-  on(actions.loadShoppingListSucceeded, (s, a) => adapter.setAll(a.payload, s))
+  on(actions.loadShoppingListSucceeded, (s, a) => adapter.setAll(a.payload, s)),
+  on(actions.markPurchased, (s, a) => adapter.updateOne({
+    id: a.payload.id,
+    changes: {
+      purchased: true
+    }
+  }, s))
 );
 
 export function reducer(state: ShoppingState = initialState, action: Action): ShoppingState {
