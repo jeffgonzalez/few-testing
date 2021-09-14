@@ -12,6 +12,9 @@ import { ShoppingListComponent } from './components/shopping-list/shopping-list.
 import { ShoppingEntryComponent } from './components/shopping-entry/shopping-entry.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShoppingListItemComponent } from './components/shopping-list-item/shopping-list-item.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { ShoppingListItemComponent } from './components/shopping-list-item/shopp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [ConvertersService],
   bootstrap: [AppComponent]
