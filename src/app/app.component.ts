@@ -13,5 +13,6 @@ export class AppComponent {
 
   constructor(store: Store<AppState>) {
     store.dispatch(applicationStarted());
+
   }
 }
