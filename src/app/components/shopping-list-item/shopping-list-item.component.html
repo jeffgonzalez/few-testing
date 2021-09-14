@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <span>{{item.description}}</span>
+  </div>
+  <div class="card-body">
+    Get this at <span>{{item.store || 'Unknown'}}</span>
+  </div>
+  <div class="card-footer"
+       *ngIf="item.purchased">
+    <button *ngIf="item.purchased"
+            class="btn btn-danger">Purchase</button>
+  </div>
+</div>

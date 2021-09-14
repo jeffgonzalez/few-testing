@@ -11,6 +11,7 @@ import { ShoppingComponent } from './components/shopping/shopping.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingEntryComponent } from './components/shopping-entry/shopping-entry.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShoppingListItemComponent } from './components/shopping-list-item/shopping-list-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ShoppingComponent,
     ShoppingListComponent,
-    ShoppingEntryComponent
+    ShoppingEntryComponent,
+    ShoppingListItemComponent
   ],
   imports: [
     BrowserModule,
