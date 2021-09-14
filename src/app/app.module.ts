@@ -19,6 +19,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './effects/app.effects';
 import { StoresDataService } from './services/stores-data.service';
 import { ShoppingListDataService } from './services/shopping-list-data.service';
+import { StoresEffects } from './effects/stores.effects';
+import { ShoppingItemsEffects } from './effects/shopping-items.effects';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import { ShoppingListDataService } from './services/shopping-list-data.service';
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([
+      AppEffects,
+      StoresEffects,
+      ShoppingItemsEffects])
   ],
   providers: [ConvertersService,
     StoresDataService,
