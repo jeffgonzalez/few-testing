@@ -1,6 +1,6 @@
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, Action } from '@ngrx/store';
-
+import { createReducer, Action, on } from '@ngrx/store';
+import * as actions from '../actions/stores.actions';
 export interface StoreEntity {
   id: string;
   name: string;
@@ -15,7 +15,8 @@ export const adapter = createEntityAdapter<StoreEntity>();
 const initialState = adapter.getInitialState();
 
 const reducerFunction = createReducer(
-  initialState
+  initialState,
+  on(actions.loadStoresSucceeded, (s, a) => adapter.setAll(a.payload, s))
 );
 
 export function reducer(state: StoreState = initialState, action: Action): StoreState {

@@ -1,6 +1,6 @@
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, Action } from '@ngrx/store';
-
+import { createReducer, Action, on } from '@ngrx/store';
+import * as actions from '../actions/shopping-list.actions';
 export interface ShoppingEntity {
   id: string;
   description: string;
@@ -17,7 +17,8 @@ export const adapter = createEntityAdapter<ShoppingEntity>();
 const initialState = adapter.getInitialState();
 
 const reducerFunction = createReducer(
-  initialState
+  initialState,
+  on(actions.loadShoppingListSucceeded, (s, a) => adapter.setAll(a.payload, s))
 );
 
 export function reducer(state: ShoppingState = initialState, action: Action): ShoppingState {
