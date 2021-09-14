@@ -21,4 +21,5 @@ export class TempConverterComponent {
     this.convertedTemp = this.convert.convertToC(tempInF);
   }
 
+
 }

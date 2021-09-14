@@ -1,22 +1,14 @@
-<div class="card">
+<div class="card"
+     *ngFor="let item of items">
   <div class="card-header">
-    <span>Beer</span>
+    <span>{{item.description}}</span>
   </div>
   <div class="card-body">
-    Get this at <span>Giant Eagle</span>
+    Get this at <span>{{item.store}}</span>
   </div>
-  <div class="card-footer">
-    stuff
-  </div>
-</div>
-<div class="card">
-  <div class="card-header">
-    <span>Chips</span>
-  </div>
-  <div class="card-body">
-    Get this at <span>Target</span>
-  </div>
-  <div class="card-footer">
-    stuff
+  <div class="card-footer"
+       *ngIf="item.purchased">
+    <button *ngIf="item.purchased"
+            class="btn btn-danger">Purchase</button>
   </div>
 </div>
