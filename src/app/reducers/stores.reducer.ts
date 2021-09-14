@@ -12,7 +12,7 @@ export interface StoreState extends EntityState<StoreEntity> {
 
 export const adapter = createEntityAdapter<StoreEntity>();
 
-const initialState = adapter.getInitialState();
+export const initialState = adapter.getInitialState();
 
 const reducerFunction = createReducer(
   initialState,

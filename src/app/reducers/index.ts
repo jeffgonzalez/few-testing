@@ -29,7 +29,7 @@ export const selectShoppingListItemModel = createSelector(
   (items, stores) => {
     return items.map(item => ({
       ...item,
-      store: item.store ? stores[item.store] : null
+      store: item.store ? stores[item.store]?.name : 'Unknown'
     } as ShoppingListItemModel))
   }
 )

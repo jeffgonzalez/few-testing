@@ -38,11 +38,6 @@ describe('ShoppingListItemComponent', () => {
       expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-purchased]')).toBeNull();
     });
 
-    it('shows uknown for the store since there is no store', () => {
-
-      testHostFixture.detectChanges();
-      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-store]').innerText).toBe('Unknown');
-    });
 
 
   });
@@ -80,12 +75,7 @@ describe('ShoppingListItemComponent', () => {
 
     });
 
-    it('shows uknown for the store since there is no store', () => {
 
-      testHostFixture.detectChanges();
-      expect(testHostFixture.nativeElement.querySelector('[data-shopping-list-item-store]').innerText).toBe('Unknown');
-
-    });
 
   });
 });
