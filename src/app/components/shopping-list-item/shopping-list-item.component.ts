@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { markPurchased } from 'src/app/actions/shopping-list.actions';
 import { ShoppingListItemModel } from 'src/app/models';
+import { AppState } from 'src/app/reducers';
 
 @Component({
   selector: 'app-shopping-list-item',
@@ -9,11 +12,10 @@ import { ShoppingListItemModel } from 'src/app/models';
 export class ShoppingListItemComponent {
 
   @Input() item!: ShoppingListItemModel;
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
 
   markPurchased(item: ShoppingListItemModel) {
-    this.item.purchased = true;
-    console.log(this.item);
+    this.store.dispatch(markPurchased({ payload: item }))
   }
 }

@@ -14,3 +14,9 @@ export const loadShoppingListFailed = createAction(
   '[shopping-list] load shopping list failed',
   props<{ payload: string }>()
 );
+
+
+export const markPurchased = createAction(
+  '[shopping-list] mark item purchased',
+  props<{ payload: ShoppingEntity }>()
+);
