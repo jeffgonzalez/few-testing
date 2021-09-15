@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { ShoppingListItemModel } from "src/app/models";
 import { ShoppingListItemComponent } from "./shopping-list-item.component";
 
-xdescribe('ShoppingListItemComponent', () => {
+describe('ShoppingListItemComponent', () => {
 
 
 
