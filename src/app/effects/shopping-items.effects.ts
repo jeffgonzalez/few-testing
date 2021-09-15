@@ -19,6 +19,7 @@ export class ShoppingItemsEffects {
     , { dispatch: false }
   );
 
+  // looadShoppingLost => loadShoppingListSucceeded
   loadShoppingItems$ = createEffect(() =>
     this.actions$.pipe(
       ofType(actions.loadShoppingList),
