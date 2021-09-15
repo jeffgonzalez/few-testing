@@ -10,8 +10,8 @@ export class ShoppingItemsEffects {
   markItemAsPurchased = createEffect(() =>
     this.actions$.pipe(
       ofType(actions.markPurchased),
-      map(a => a.payload),
-      tap(a => console.log(` about to mark ${a.id} purchased`)),
+      map(a => a.payload), // action -> payload ShoppingEntity
+      tap(a => console.log(` about to mark ${a.id} purchased`)), // ShoppingEntity -> ShoppingEntity
       mergeMap((payload) => this.service.markItemAsPurchased(payload))
     )
     , { dispatch: false }
