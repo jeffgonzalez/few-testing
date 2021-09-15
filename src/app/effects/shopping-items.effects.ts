@@ -25,7 +25,7 @@ export class ShoppingItemsEffects {
       mergeMap(() => this.service.getShoppingList()
         .pipe(
           map(payload => actions.loadShoppingListSucceeded({ payload })),
-          catchError(err => of(applicationError({ source: 'Shopping', message: 'Cannot Load Shopping List' })))
+          catchError(err => of(applicationError({ source: 'Shopping', message: 'The API Seems Like It Down. Bummer!' })))
         )
       )
     )
