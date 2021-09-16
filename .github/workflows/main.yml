@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-node-
             
       - name: Setup Node.js Environment
-        uses: actions/@setup-node@1.4.3
+        uses: actions/setup-node@v2.4.0
         with:
           node-version: ${{ matrix.node-version }}
       
