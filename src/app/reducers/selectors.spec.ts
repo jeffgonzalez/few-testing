@@ -1,4 +1,4 @@
-import { Store } from '@ngrx/store';
+
 import * as selectors from '.';
 import { ShoppingListItemModel } from '../models';
 
